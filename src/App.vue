@@ -1,18 +1,29 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+     <cube-button @click="showDialog">show dialog</cube-button>
+     <HelloWorld />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import HelloWorld from '@components/HelloWorld.vue'
+import {query} from '@api/user'
 export default {
   name: 'App',
   components: {
     HelloWorld
-  }
+  },
+  methods: {
+      showDialog() {
+        this.$createDialog({
+          type: 'alert',
+          title: 'Alert',
+          content: 'dialog content'
+        }).show()
+        query()
+      }
+    }
 }
 </script>
 
