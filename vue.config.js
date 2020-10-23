@@ -49,7 +49,8 @@ module.exports = {
         '@images': resolve('src/images'),
         '@components': resolve('src/components'),
         '@api': resolve('src/api'),
-        '@utils': resolve('src/utils')
+        '@utils': resolve('src/utils'),
+        '@pages': resolve('src/pages')
       }
 
     }

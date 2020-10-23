@@ -1,30 +1,27 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-     <cube-button @click="showDialog">show dialog</cube-button>
-     <HelloWorld />
+    <!-- <img alt="Vue logo" src="./assets/logo.png" />
+    <cube-button @click="showDialog">show dialog</cube-button> -->
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from '@components/HelloWorld.vue'
-import {query} from '@api/user'
+import { query } from "@api/user";
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  },
+  name: "App",
+  components: {},
   methods: {
-      showDialog() {
-        this.$createDialog({
-          type: 'alert',
-          title: 'Alert',
-          content: 'dialog content'
-        }).show()
-        query()
-      }
-    }
-}
+    showDialog() {
+      this.$createDialog({
+        type: "alert",
+        title: "Alert",
+        content: "dialog content",
+      }).show();
+      query();
+    },
+  },
+};
 </script>
 
 <style>
